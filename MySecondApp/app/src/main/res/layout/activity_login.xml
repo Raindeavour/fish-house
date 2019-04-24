@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:background="@mipmap/img_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/img_login"
+        />
+
+    <EditText
+        android:id="@+id/inputID"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:hint="输入账号"
+        android:digits="1234567890"
+        android:maxLength="11"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/inputID"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="190dp"
+        android:hint="输入密码"
+        android:digits="1234567890"
+        android:maxLength="6"
+        android:inputType="numberPassword"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:text="登录"/>
+</RelativeLayout>
