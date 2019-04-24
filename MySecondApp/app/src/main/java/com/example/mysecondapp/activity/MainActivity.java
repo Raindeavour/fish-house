@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ViewPager myViewPager;
     private TabLayout tabLayout;
@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabLayout =findViewById(R.id.tabLayout);
-        myViewPager = findViewById(R.id.myViewPager);
+        initView();
 
         titles.add("页面1");
         titles.add("页面2");
@@ -95,5 +94,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void initView() {
+        tabLayout =findViewById(R.id.tabLayout);
+        myViewPager = findViewById(R.id.myViewPager);
+        tabLayout =findViewById(R.id.tabLayout);
+        myViewPager = findViewById(R.id.myViewPager);
     }
 }
