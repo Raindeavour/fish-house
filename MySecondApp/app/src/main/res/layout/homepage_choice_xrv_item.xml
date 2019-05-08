@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
+
+    <ImageView
+        android:id="@+id/img_main"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_below="@id/img_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="驻颜有方，母亲节礼物送的好，妈妈才不会老！"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tv_introduction"
+        android:layout_below="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="希望妈妈永远是个美人"/>
+
+    <TextView
+        android:id="@+id/tv_column"
+        android:layout_below="@id/tv_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="栏目"/>
+
+    <TextView
+        android:id="@+id/tv_column_title"
+        android:layout_below="@id/tv_introduction"
+        android:layout_toRightOf="@id/tv_column"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="靠脸吃饭"/>
+
+    <ImageView
+        android:id="@+id/img_like"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/tv_introduction"
+        android:layout_toLeftOf="@id/tv_count"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/img_like_select"/>
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_introduction"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="15dp"
+        android:text="339"/>
+</RelativeLayout>

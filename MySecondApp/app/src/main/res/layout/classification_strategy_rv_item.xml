@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fff">
+    <RelativeLayout
+        android:id="@+id/rl_strategy_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_strategy_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="品类"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/img_triangle_right"
+            android:layout_marginRight="5dp"
+            android:text="查看全部" />
+        <ImageView
+            android:id="@+id/img_triangle_right"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/triangle_right1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_strategy_item"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_one"
+            android:layout_width="165dp"
+            android:layout_height="89dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+        <ImageView
+            android:id="@+id/img_cv_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_two"
+            android:layout_width="165dp"
+            android:layout_height="89dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/img_cv_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_three"
+            android:layout_width="165dp"
+            android:layout_height="89dp"
+            android:layout_below="@id/cv_one"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:id="@+id/img_cv_three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_four"
+            android:layout_width="165dp"
+            android:layout_height="89dp"
+            android:layout_below="@id/cv_two"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:id="@+id/img_cv_four"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_five"
+            android:layout_width="165dp"
+            android:layout_height="89dp"
+            android:layout_below="@id/cv_three"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:id="@+id/img_cv_five"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_six"
+            android:layout_width="165dp"
+            android:layout_height="89dp"
+            android:layout_below="@id/cv_four"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:id="@+id/img_cv_six"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</RelativeLayout>

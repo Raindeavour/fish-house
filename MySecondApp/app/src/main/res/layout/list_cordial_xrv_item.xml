@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="163dp"
+    android:layout_height="240dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:background="#fff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_cordial"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"/>
+        <TextView
+            android:id="@+id/tv_cordial"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/img_cordial"
+            android:text="atex·猫咪便携充电式热敷睡眠眼罩"
+            />
+
+        <TextView
+            android:id="@+id/tv_cordial_price"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_below="@id/tv_cordial"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp"
+            android:text="¥ 298"
+            android:textColor="#f00"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -7,5 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+<style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Button">
+    <item name="android:singleLine">true</item>
+    <item name="android:textSize">12sp</item>
+</style>
 </resources>

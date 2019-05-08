@@ -35,31 +35,32 @@ public class LoginActivity extends Activity {
                 editor.putString("18888888888","123456");   //固定
                 editor.commit();
                 String str = inputID.getText().toString();
-                if (!sp.getString(inputID.getText().toString(), "").isEmpty())
-                {
-                    if (sp.getString(inputID.getText().toString(), "").equals(inputPassword.getText().toString()))
-                    {
-                        inputID.setText(str);
-                        inputPassword.setText("");
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("inputID",inputID.getText().toString()));
-                    }
-                    else
-                    {
-                        AlertDialog.Builder dialog = new AlertDialog.Builder(LoginActivity.this);
-                        dialog.setTitle("提示：");
-                        dialog.setMessage("密码为空或密码错误!");
-                        dialog.setPositiveButton("确定", null);
-                        AlertDialog show = dialog.create();
-                        show.show();
-                    }
-                } else {
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(LoginActivity.this);
-                    dialog.setTitle("提示：");
-                    dialog.setMessage("账号为空或账号不存在!");
-                    dialog.setPositiveButton("确定", null);
-                    AlertDialog show = dialog.create();
-                    show.show();
-                }
+                startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("inputID",inputID.getText().toString()));
+//                if (!sp.getString(inputID.getText().toString(), "").isEmpty())
+//                {
+//                    if (sp.getString(inputID.getText().toString(), "").equals(inputPassword.getText().toString()))
+//                    {
+//                        inputID.setText(str);
+//                        inputPassword.setText("");
+//                        startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("inputID",inputID.getText().toString()));
+//                    }
+//                    else
+//                    {
+//                        AlertDialog.Builder dialog = new AlertDialog.Builder(LoginActivity.this);
+//                        dialog.setTitle("提示：");
+//                        dialog.setMessage("密码为空或密码错误!");
+//                        dialog.setPositiveButton("确定", null);
+//                        AlertDialog show = dialog.create();
+//                        show.show();
+//                    }
+//                } else {
+//                    AlertDialog.Builder dialog = new AlertDialog.Builder(LoginActivity.this);
+//                    dialog.setTitle("提示：");
+//                    dialog.setMessage("账号为空或账号不存在!");
+//                    dialog.setPositiveButton("确定", null);
+//                    AlertDialog show = dialog.create();
+//                    show.show();
+//                }
 
             }
         });

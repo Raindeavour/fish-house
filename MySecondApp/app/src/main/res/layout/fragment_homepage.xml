@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/brand_name"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="礼物说"
+            android:textColor="#f00"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <SearchView
+            android:id="@+id/sv_one"
+            android:layout_width="223dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/brand_name"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/sv_shape"
+            android:queryHint="选份走心的好礼送给Ta" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/alarmclock" />
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tl_one"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:layout_above="@id/vp_one"
+        android:layout_marginBottom="3dp"
+        app:tabPaddingBottom="-50dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="#f00" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_one"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="68dp"
+        android:scrollbars="vertical" />
+</RelativeLayout>

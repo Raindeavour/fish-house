@@ -1,4 +1,4 @@
-package com.example.mysecondapp.fragment;
+package com.example.mysecondapp.fragment.mine;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.mysecondapp.R;
 
-public class TwoFragment extends Fragment {
+public class MineTwoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_two,null);
+        View view = inflater.inflate(R.layout.fragment_mine_two,null);
         return  view;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.mysecondapp.fragment;
+package com.example.mysecondapp.fragment.homepage;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.mysecondapp.R;
 
-public class ThreeFragment extends Fragment {
+public class SendColleagueFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_three,null);
+        View view = inflater.inflate(R.layout.fragment_sendcolleague,null);
         return  view;
     }
 }
