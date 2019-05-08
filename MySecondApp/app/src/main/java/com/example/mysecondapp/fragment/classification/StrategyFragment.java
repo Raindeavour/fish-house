@@ -96,7 +96,6 @@ public class StrategyFragment extends Fragment {
                     }
                     //刷新页面
                     strategyHeaderRVAdapter.notifyDataSetChanged();
-                    strategyRVAdapter.notifyDataSetChanged();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -133,7 +132,6 @@ public class StrategyFragment extends Fragment {
                     }
                     //刷新页面
                     strategyRVAdapter.notifyDataSetChanged();
-                    strategyHeaderRVAdapter.notifyDataSetChanged();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

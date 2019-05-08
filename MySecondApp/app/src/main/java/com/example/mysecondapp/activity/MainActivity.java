@@ -3,7 +3,6 @@ package com.example.mysecondapp.activity;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -66,9 +65,6 @@ public class MainActivity extends BaseActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.list_select);
         tabLayout.getTabAt(2).setIcon(R.drawable.sort_select);
         tabLayout.getTabAt(3).setIcon(R.drawable.person_select);
-
-        //默认为3，避免切换fragment时，重新创建fragment时旧fragment数据没清楚，而产生重复数据
-        myViewPager.setOffscreenPageLimit(4);
 
         //这个方法扔能轻微滑动至翻页
 //        //禁止滑动
