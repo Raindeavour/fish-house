@@ -61,7 +61,7 @@ public class SingleProductFragment extends Fragment {
         singlePLeftRV = getActivity().findViewById(R.id.rv_singleP_left);
         singlePRightRV = getActivity().findViewById(R.id.rv_singleP_right);
         singlePLeftRVAdapter = new SinglePLeftRVAdapter(categoriesBeans);
-        singlePRightRVAdapter = new SinglePRightRVAdapter(subcategoriesBeans);
+        singlePRightRVAdapter = new SinglePRightRVAdapter(categoriesBeans,subcategoriesBeans);
 
         singlePLeftRV.setLayoutManager(new LinearLayoutManager(getContext()));
         singlePLeftRV.setAdapter(singlePLeftRVAdapter);
@@ -94,6 +94,7 @@ public class SingleProductFragment extends Fragment {
                     for (int i = 0; i <= categoriesBeans1.size() - 1; i++) {
                         categoriesBeans.add(categoriesBeans1.get(i));
                     }
+//                    Log.e("categoriesBeanssize",categoriesBeans1.size()+"");
                     //刷新页面
                     singlePLeftRVAdapter.notifyDataSetChanged();
                 } catch (Exception e) {
