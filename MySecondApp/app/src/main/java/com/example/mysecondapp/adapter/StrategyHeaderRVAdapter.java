@@ -33,7 +33,7 @@ public class StrategyHeaderRVAdapter extends RecyclerView.Adapter<StrategyHeader
     @NonNull
     @Override
     public StrategyHeaderRVAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.classification_strategy_rv_header,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.strategy_rv_header_item,viewGroup,false);
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return  myViewHolder;
     }
