@@ -17,6 +17,7 @@ import com.example.mysecondapp.adapter.StrategyHeaderRVAdapter;
 import com.example.mysecondapp.adapter.StrategyRVAdapter;
 import com.example.mysecondapp.bean.CStrategyHeaderBean;
 import com.example.mysecondapp.bean.CStrategyItemBean;
+import com.example.mysecondapp.interfaces.CStrategyHeaderAPI;
 import com.example.mysecondapp.interfaces.CStrategyItemAPI;
 import com.google.gson.Gson;
 
@@ -54,16 +55,61 @@ public class StrategyFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         strategyRV = getActivity().findViewById(R.id.rv_strategy);
-        strategyRVAdapter = new StrategyRVAdapter(getContext(),channelGroupsBeans);
+        strategyRVAdapter = new StrategyRVAdapter(getContext(),channelGroupsBeans,columnsBeans);
+
+        strategyHeaderRVAdapter = new StrategyHeaderRVAdapter(getContext(),columnsBeans);
+
         HeaderViewAdapter headerViewAdapter = new HeaderViewAdapter(strategyRVAdapter);
+
         strategyRV.setLayoutManager(new LinearLayoutManager(getContext()));
         strategyRV.setAdapter(headerViewAdapter);
 
-        //添加头部
-        LayoutInflater headerInflater = LayoutInflater.from(getContext());
-        View headerView = headerInflater.inflate(R.layout.strategy_rv_header_item,null);
-        headerViewAdapter.addHeaderView(headerView);
+//        //添加头部
+//        LayoutInflater headerInflater = LayoutInflater.from(getContext());
+//        View headerView = headerInflater.inflate(R.layout.classification_strategy_rv_header,null);
+//        headerViewAdapter.addHeaderView(headerView);
 
+        getColumnsBeans();
+        getChannelGroupsBeans();
+    }
+    public void getColumnsBeans()
+    {
+        Retrofit retrofit1 = new Retrofit.Builder()
+                .baseUrl("http://api.liwushuo.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        CStrategyHeaderAPI cStrategyHeaderAPI = retrofit1.create(CStrategyHeaderAPI.class);
+
+        Call<ResponseBody> callStrategyHeader = cStrategyHeaderAPI.getCStrategyHeader();
+
+        callStrategyHeader.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    Log.e("response", response.toString());
+                    str1 = new String(response.body().bytes());//把原始数据转为字符串
+                    CStrategyHeaderBean cStrategyHeaderBean = new Gson().fromJson(str1,CStrategyHeaderBean.class);
+                    List<CStrategyHeaderBean.DataBean.ColumnsBean> columnsBeans1 =cStrategyHeaderBean.getData().getColumns();
+                    for (int i = 0; i <= columnsBeans1.size() - 1; i++) {
+                        columnsBeans.add(columnsBeans1.get(i));
+                    }
+                    //刷新页面
+                    strategyHeaderRVAdapter.notifyDataSetChanged();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.e("failure", "fail");
+            }
+        });
+    }
+
+    public void getChannelGroupsBeans()
+    {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.liwushuo.com/")
                 .addConverterFactory(GsonConverterFactory.create())
