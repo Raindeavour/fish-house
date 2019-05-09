@@ -61,12 +61,12 @@ public class SingleProductFragment extends Fragment {
         singlePLeftRV = getActivity().findViewById(R.id.rv_singleP_left);
         singlePRightRV = getActivity().findViewById(R.id.rv_singleP_right);
         singlePLeftRVAdapter = new SinglePLeftRVAdapter(categoriesBeans);
-        singlePRightRVAdapter = new SinglePRightRVAdapter(categoriesBeans,subcategoriesBeans);
+        singlePRightRVAdapter = new SinglePRightRVAdapter(getContext(),categoriesBeans,subcategoriesBeans);
 
         singlePLeftRV.setLayoutManager(new LinearLayoutManager(getContext()));
         singlePLeftRV.setAdapter(singlePLeftRVAdapter);
 
-        singlePRightRV.setLayoutManager(new GridLayoutManager(getContext(),3));
+        singlePRightRV.setLayoutManager(new LinearLayoutManager(getContext()));
         singlePRightRV.setAdapter(singlePRightRVAdapter);
 
 

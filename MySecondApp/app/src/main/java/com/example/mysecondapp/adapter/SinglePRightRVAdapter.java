@@ -1,7 +1,10 @@
 package com.example.mysecondapp.adapter;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +26,13 @@ import java.util.List;
 public class SinglePRightRVAdapter extends RecyclerView.Adapter<SinglePRightRVAdapter.MyViewHolder> {
 
     List<CSingleProductBean.DataBean.CategoriesBean> categoriesBeans = new ArrayList<>();
-    List<CSingleProductBean.DataBean.CategoriesBean.SubcategoriesBean> subcategoriesBeans = new ArrayList<>();
+    List<CSingleProductBean.DataBean.CategoriesBean.SubcategoriesBean> subcategoriesBeans=new ArrayList<>();
 
-    public SinglePRightRVAdapter(List<CSingleProductBean.DataBean.CategoriesBean> categoriesBeans, List<CSingleProductBean.DataBean.CategoriesBean.SubcategoriesBean> subcategoriesBeans) {
+    Context context;
+    public SinglePRightRVAdapter(Context context,List<CSingleProductBean.DataBean.CategoriesBean> categoriesBeans,List<CSingleProductBean.DataBean.CategoriesBean.SubcategoriesBean> subcategoriesBeans) {
+        this.context=context;
         this.categoriesBeans = categoriesBeans;
-        this.subcategoriesBeans = subcategoriesBeans;
+        this.subcategoriesBeans=subcategoriesBeans;
     }
 
     @NonNull
@@ -40,49 +45,26 @@ public class SinglePRightRVAdapter extends RecyclerView.Adapter<SinglePRightRVAd
 
     @Override
     public void onBindViewHolder(@NonNull SinglePRightRVAdapter.MyViewHolder myViewHolder, int i) {
-
-
-            if (i>=0&&i<7) {
-                Picasso.get().load(categoriesBeans.get(0).getSubcategories().get(i).getIcon_url()).placeholder(R.mipmap.img_load).fit().into(myViewHolder.img_singleP_rv_right);
-                myViewHolder.tv_singleP_rv_right.setText(categoriesBeans.get(0).getSubcategories().get(i).getName());
-            }
-            else if (i>=7&&i<18)
-            {
-                Picasso.get().load(categoriesBeans.get(1).getSubcategories().get(i-7).getIcon_url()).placeholder(R.mipmap.img_load).fit().into(myViewHolder.img_singleP_rv_right);
-                myViewHolder.tv_singleP_rv_right.setText(categoriesBeans.get(1).getSubcategories().get(i-7).getName());
-            }
-            else if(i>=18&&i<29)
-            {
-                Picasso.get().load(categoriesBeans.get(2).getSubcategories().get(i-18).getIcon_url()).placeholder(R.mipmap.img_load).fit().into(myViewHolder.img_singleP_rv_right);
-                myViewHolder.tv_singleP_rv_right.setText(categoriesBeans.get(2).getSubcategories().get(i-18).getName());
-            }
-            else {
-                Picasso.get().load(R.mipmap.img_load).fit().into(myViewHolder.img_singleP_rv_right);
-                myViewHolder.tv_singleP_rv_right.setText("未赋值");
-            }
-
-//        Picasso.get().load(subcategoriesBeans.get(i).getIcon_url()).placeholder(R.mipmap.img_load).fit().into(myViewHolder.img_singleP_rv_right);
-//        myViewHolder.tv_singleP_rv_right.setText(subcategoriesBeans.get(i).getName());
+        myViewHolder.tv_right_item_name.setText(categoriesBeans.get(i).getName());
+        //动态传入
+        myViewHolder.singleRightRVTwoAdapter = new SingleRightRVTwoAdapter(categoriesBeans.get(i).getSubcategories());
+        myViewHolder.rv_singleP_right_item.setAdapter(myViewHolder.singleRightRVTwoAdapter);
+        myViewHolder.rv_singleP_right_item.setLayoutManager(new GridLayoutManager(context,3));
     }
 
     @Override
     public int getItemCount() {
-        int count = 0;
-        for (int i = 0; i <categoriesBeans.size(); i++) {
-            count += categoriesBeans.get(i).getSubcategories().size();
-        }
-        return count;
-//        return  subcategoriesBeans.size();
+        return categoriesBeans.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView img_singleP_rv_right;
-        TextView tv_singleP_rv_right;
-
+        TextView tv_right_item_name;
+        RecyclerView rv_singleP_right_item;
+        SingleRightRVTwoAdapter singleRightRVTwoAdapter;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_singleP_rv_right = itemView.findViewById(R.id.tv_singleP_rv_right);
-            img_singleP_rv_right = itemView.findViewById(R.id.img_singleP_rv_right);
+            tv_right_item_name = itemView.findViewById(R.id.tv_right_item_name);
+            rv_singleP_right_item = itemView.findViewById(R.id.rv_singleP_right_item);
         }
     }
 }
