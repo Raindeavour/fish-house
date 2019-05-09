@@ -46,7 +46,7 @@ public class SinglePRightRVAdapter extends RecyclerView.Adapter<SinglePRightRVAd
     @Override
     public void onBindViewHolder(@NonNull SinglePRightRVAdapter.MyViewHolder myViewHolder, int i) {
         myViewHolder.tv_right_item_name.setText(categoriesBeans.get(i).getName());
-        //动态传入
+        //动态传入subcategoriesBeans--get(i)
         myViewHolder.singleRightRVTwoAdapter = new SingleRightRVTwoAdapter(categoriesBeans.get(i).getSubcategories());
         myViewHolder.rv_singleP_right_item.setAdapter(myViewHolder.singleRightRVTwoAdapter);
         myViewHolder.rv_singleP_right_item.setLayoutManager(new GridLayoutManager(context,3));
