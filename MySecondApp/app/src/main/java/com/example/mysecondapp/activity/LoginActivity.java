@@ -36,6 +36,7 @@ public class LoginActivity extends Activity {
                 editor.commit();
                 String str = inputID.getText().toString();
                 startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("inputID",inputID.getText().toString()));
+                finish();
 //                if (!sp.getString(inputID.getText().toString(), "").isEmpty())
 //                {
 //                    if (sp.getString(inputID.getText().toString(), "").equals(inputPassword.getText().toString()))

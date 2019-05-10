@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import com.example.mysecondapp.R;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Constructor;
 
-public class WelcomeActivity extends Activity implements  Runnable {
+
+public class WelcomeActivity extends Activity{
 
     Button skipButton;
     ImageView imageView;
@@ -46,8 +48,4 @@ public class WelcomeActivity extends Activity implements  Runnable {
         });
     }
 
-    @Override
-    public void run() {
-
-    }
 }
