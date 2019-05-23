@@ -1,6 +1,7 @@
 package com.example.mysecondapp.fragment.homepage;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -218,5 +219,4 @@ public class ChoiceFragment extends Fragment {
         }
 
     }
-
 }
